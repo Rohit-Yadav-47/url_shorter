@@ -227,14 +227,20 @@ def main():
     success, result = shortener.create_short_url(long_url)
     print(f"Success: {success}, Result: {result}")
     
-    # Test 2: Create custom URL
-    print("\nTest 2: Creating custom URL")
+    # Test 2.1: Create custom URL
+    print("\nTest 2.1: Creating custom URL")
     success, result = shortener.create_short_url(
         "https://example.com/custom",
         custom_code="CUSTOM1"
     )
     print(f"Success: {success}, Result: {result}")
-    
+    # Test 2.2: Create custom URL
+    print("\nTest 2.2: Creating custom URL")
+    success, result = shortener.create_short_url(
+        "https://example.com/custom3",
+        custom_code="CUSTOM1"
+    )
+    print(f"Success: {success}, Result: {result}")
     # Test 3: Create temporary URL
     print("\nTest 3: Creating temporary URL")
     success, result = shortener.create_short_url(
@@ -245,11 +251,16 @@ def main():
     
     # Test 4: Retrieve URL
     print("\nTest 4: Retrieving URL")
-    success, long_url = shortener.get_long_url(result)
+    success, long_url = shortener.get_long_url("0000002")
+    print(f"Success: {success}, URL: {long_url}")
+    
+    # Test 4: Retrieve URL
+    print("\nTest 5: Retrieving URL")
+    success, long_url = shortener.get_long_url("00020002")
     print(f"Success: {success}, URL: {long_url}")
     
     # Test 5: Get statistics
-    print("\nTest 5: Getting statistics")
+    print("\nTest 6: Getting statistics")
     success, stats = shortener.get_url_stats(result)
     print(f"Success: {success}")
     print("Statistics:", stats)
