@@ -1,6 +1,6 @@
 # Custom URL Shortener Implementation
 
-https://onecompiler.com/python/435r2teyv
+https://www.online-python.com/CHs2vNaG8E
 
 A pure Python implementation of a URL shortening service with no external dependencies. This implementation provides URL shortening, custom aliases, expiration, and analytics capabilities.
 
